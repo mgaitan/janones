@@ -35,9 +35,7 @@ READING_ORDER = [
     "rosto.xhtml",
     "epigrafe.xhtml",
     "sumario.xhtml",
-    "a1.xhtml",
     "a2.xhtml",
-    "a3.xhtml",
     "a4.xhtml",
     *CHAPTERS,
     "creditos.xhtml",
@@ -48,9 +46,7 @@ PAGE_LABELS = {
     "rosto.xhtml": "Portada",
     "epigrafe.xhtml": "Epígrafe",
     "sumario.xhtml": "Índice",
-    "a1.xhtml": "Presentación",
     "a2.xhtml": "Presentación",
-    "a3.xhtml": "Prefacio",
     "a4.xhtml": "Prefacio",
     "creditos.xhtml": "Créditos",
     "colofao.xhtml": "Colofón",
@@ -197,7 +193,30 @@ def copy_site_assets() -> None:
     (DOCS / "downloads").mkdir(parents=True)
 
 
+def merge_section_title(title_page: str, text_page: str) -> None:
+    xhtml = "http://www.w3.org/1999/xhtml"
+    title_root = parse(DOCS / "OEBPS" / "Text" / title_page).getroot()
+    text_path = DOCS / "OEBPS" / "Text" / text_page
+    text_tree = parse(text_path)
+    text_root = text_tree.getroot()
+    title_body = title_root.find(f"{{{xhtml}}}body/{{{xhtml}}}div")
+    content = text_root.find(f".//{{{xhtml}}}div[@class='Quadro-de-texto-b-sico']")
+    if title_body is None or content is None:
+        return
+    heading = title_body.find(f"{{{xhtml}}}h1")
+    author = title_body.find(f"{{{xhtml}}}p")
+    merged = ET.Element(f"{{{xhtml}}}div", {"class": "web-section-heading"})
+    if heading is not None:
+        merged.append(ET.fromstring(ET.tostring(heading, encoding="unicode")))
+    if author is not None:
+        merged.append(ET.fromstring(ET.tostring(author, encoding="unicode")))
+    content.insert(0, merged)
+    text_tree.write(text_path, encoding="utf-8", xml_declaration=True)
+
+
 def build_reader_site() -> None:
+    merge_section_title("a1.xhtml", "a2.xhtml")
+    merge_section_title("a3.xhtml", "a4.xhtml")
     pages = []
     for index, name in enumerate(READING_ORDER):
         path = DOCS / "OEBPS" / "Text" / name
@@ -257,7 +276,7 @@ def build_reader_site() -> None:
 <title>{html.escape(TITLE)}</title><link rel="stylesheet" href="site.css">
 </head><body><main class="landing">
 <p class="eyebrow">EDICIÓN DE TRABAJO · ESPAÑOL</p>
-<h1>Janonismo<br><em>cultural</em></h1>
+<h1><span class="cover-word">Janonismo</span><br><em>cultural</em></h1>
 <p class="subtitle">El uso de las redes sociales y la batalla por la democracia en Brasil</p>
 <p class="byline">André Janones</p>
 <div class="downloads"><a class="button" href="downloads/janonismo-cultural-es.epub">Descargar EPUB</a><a class="button secondary" href="downloads/janonismo-cultural-es.pdf">Descargar PDF</a></div>
@@ -304,6 +323,33 @@ def main() -> None:
 
 
 SITE_CSS = """:root{color-scheme:light;--ink:#1c2422;--muted:#66706c;--paper:#faf9f5;--accent:#d34d35;--line:#deded6;--green:#35594b}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.72 system-ui,sans-serif}.landing{max-width:850px;margin:0 auto;padding:8vh 28px 60px}.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.17em;color:var(--accent)}h1{font:700 clamp(3.8rem,12vw,7rem)/.94 Georgia,serif;letter-spacing:-.06em;margin:2rem 0 1rem}h1 em{color:var(--accent)}.subtitle{font-size:1.2rem;max-width:600px;color:var(--muted)}.byline{font-weight:600;margin:2rem 0}.downloads{display:flex;gap:12px;flex-wrap:wrap;margin:2rem 0}.button{display:inline-block;padding:12px 18px;border-radius:5px;background:var(--green);color:white;text-decoration:none;font-weight:700}.button.secondary{background:transparent;color:var(--green);border:1px solid var(--green)}.notice{padding:16px 20px;border-left:4px solid var(--accent);background:#f1eee5;color:#454b47}.contents{margin-top:4rem}.contents h2{font:600 2rem Georgia,serif}.contents ol{list-style:none;padding:0;border-top:1px solid var(--line)}.contents li{border-bottom:1px solid var(--line)}.contents li a{display:block;padding:12px 2px;color:var(--ink);text-decoration:none}.contents li a:hover{color:var(--accent)}footer{margin-top:4rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}.reader-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:850px;margin:1rem auto;padding:12px 20px;border-block:1px solid var(--line);font:600 .9rem system-ui,sans-serif}.reader-nav a{color:var(--green);text-decoration:none}.reader-nav a:hover{text-decoration:underline}.reader-nav .reader-home{margin-right:auto}body:has(.reader-nav) .Quadro-de-texto-b-sico{max-width:740px;margin:3rem auto;padding:0 24px;font:19px/1.8 'Adobe Garamond Pro',Georgia,serif}body:has(.reader-nav) h1{font:700 2rem/1.2 system-ui,sans-serif;letter-spacing:0;margin-bottom:2rem}body:has(.reader-nav) p{margin:0 0 1.25em}body:has(.reader-nav) a{color:var(--accent)}@media(max-width:600px){body{font-size:16px}.landing{padding:7vh 20px 40px}.reader-nav{font-size:.8rem;padding:10px 12px}.reader-nav .reader-home{display:none}body:has(.reader-nav) .Quadro-de-texto-b-sico{margin:2rem auto;padding:0 20px;font-size:18px}}
+"""
+
+SITE_CSS += """
+:root{--ink:#171717;--muted:#55534b;--paper:#fffdf5;--accent:#df3026;--line:#d8d2c4;--green:#207b3c;--yellow:#ffca05;--cyan:#00a9c7;--pink:#e84c9b}
+.landing{position:relative;padding-top:10vh}
+.landing::before{content:"";position:absolute;top:0;left:0;right:0;height:12px;background:linear-gradient(90deg,var(--pink) 0 20%,var(--cyan) 20% 40%,var(--green) 40% 60%,var(--accent) 60% 80%,var(--yellow) 80%)}
+.eyebrow{color:var(--accent)}
+.landing h1{color:var(--ink)}
+.landing h1 em{display:inline-block;padding:0 .14em;background:var(--yellow);color:var(--ink);font-style:normal;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.subtitle{border-left:7px solid var(--accent);padding-left:18px;color:var(--ink)}
+.button{border-radius:2px;background:var(--ink)}
+.button.secondary{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.notice{border-left-color:var(--accent);background:#fff5cf;color:var(--ink)}
+.contents h2{border-left:8px solid var(--cyan);padding-left:14px}
+.contents li:nth-child(4n+1){border-left:5px solid var(--pink);padding-left:12px}
+.contents li:nth-child(4n+2){border-left:5px solid var(--cyan);padding-left:12px}
+.contents li:nth-child(4n+3){border-left:5px solid var(--green);padding-left:12px}
+.contents li:nth-child(4n){border-left:5px solid var(--yellow);padding-left:12px}
+.contents li a{padding:12px 8px}
+.reader-nav{border-top:3px solid var(--accent);border-bottom:1px solid var(--line);border-radius:0;background:#fffdf5}
+.reader-nav a{color:var(--accent)}
+.reader-nav a:hover{color:var(--ink)}
+body:has(.reader-nav) .web-section-heading{text-align:right;margin:0 0 2.5rem;padding:1rem 0 1.5rem;border-bottom:1px solid var(--line)}
+body:has(.reader-nav) .web-section-heading h1{display:inline-block;margin:1rem 0 0;padding:.08em .25em;background:var(--yellow)}
+body:has(.reader-nav) .web-section-heading p.p2{margin:.65em 0 0;text-align:right;font-style:italic}
+body:has(.reader-nav) .Quadro-de-texto-b-sico p.miolo-inicio1{margin-top:0}
+@media(max-width:600px){.landing{padding-top:8vh}.contents li:nth-child(n){border-left-width:4px}body:has(.reader-nav) .web-section-heading{margin-bottom:1.75rem}}
 """
 
 if __name__ == "__main__":
