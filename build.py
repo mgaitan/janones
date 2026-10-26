@@ -90,18 +90,25 @@ def update_metadata() -> None:
     description.text = "Traducción de trabajo al español. Distribución sujeta a autorización de los titulares de derechos."
     cover_meta = metadata.find("opf:meta[@name='cover']", NS)
     if cover_meta is not None:
-        cover_meta.set("content", "cover-es.svg")
+        cover_meta.set("content", "cover-es.jpg")
     manifest = package.find("opf:manifest", NS)
+    if manifest is not None:
+        for item in manifest.findall("opf:item", NS):
+            if (
+                item.get("id") == "cover-es.svg"
+                or item.get("href") == "Images/capa-es.svg"
+            ):
+                manifest.remove(item)
     if manifest is not None and not any(
-        item.get("id") == "cover-es.svg" for item in manifest.findall("opf:item", NS)
+        item.get("id") == "cover-es.jpg" for item in manifest.findall("opf:item", NS)
     ):
         ET.SubElement(
             manifest,
             f"{{{NS['opf']}}}item",
             {
-                "id": "cover-es.svg",
-                "href": "Images/capa-es.svg",
-                "media-type": "image/svg+xml",
+                "id": "cover-es.jpg",
+                "href": "Images/capa-es.jpg",
+                "media-type": "image/jpeg",
                 "properties": "cover-image",
             },
         )
@@ -275,11 +282,16 @@ def build_reader_site() -> None:
 <meta name="description" content="Edición de trabajo en español de Janonismo cultural, de André Janones.">
 <title>{html.escape(TITLE)}</title><link rel="stylesheet" href="site.css">
 </head><body><main class="landing">
+<header class="hero">
+<div class="hero-copy">
 <p class="eyebrow">EDICIÓN DE TRABAJO · ESPAÑOL</p>
-<h1><span class="cover-word">Janonismo</span><br><em>cultural</em></h1>
+<h1>Janonismo cultural</h1>
 <p class="subtitle">El uso de las redes sociales y la batalla por la democracia en Brasil</p>
 <p class="byline">André Janones</p>
 <div class="downloads"><a class="button" href="downloads/janonismo-cultural-es.epub">Descargar EPUB</a><a class="button secondary" href="downloads/janonismo-cultural-es.pdf">Descargar PDF</a></div>
+</div>
+<img class="cover-art" src="OEBPS/Images/capa-es.jpg" alt="Cubierta original de Janonismo cultural, con el subtítulo traducido al español">
+</header>
 <section class="notice"><strong>Versión de trabajo.</strong> Traducción al español pendiente de revisión editorial. La distribución pública está sujeta a autorización de los titulares de derechos.</section>
 <section class="contents"><h2>Contenido</h2><ol>{toc_items}</ol></section>
 <footer>Texto original publicado en portugués por Civilização Brasileira (2023). ISBN de la edición original: 978-65-5802-113-1.</footer>
@@ -326,30 +338,31 @@ SITE_CSS = """:root{color-scheme:light;--ink:#1c2422;--muted:#66706c;--paper:#fa
 """
 
 SITE_CSS += """
-:root{--ink:#171717;--muted:#55534b;--paper:#fffdf5;--accent:#df3026;--line:#d8d2c4;--green:#207b3c;--yellow:#ffca05;--cyan:#00a9c7;--pink:#e84c9b}
-.landing{position:relative;padding-top:10vh}
-.landing::before{content:"";position:absolute;top:0;left:0;right:0;height:12px;background:linear-gradient(90deg,var(--pink) 0 20%,var(--cyan) 20% 40%,var(--green) 40% 60%,var(--accent) 60% 80%,var(--yellow) 80%)}
+:root{--ink:#292722;--muted:#706c65;--paper:#fbfaf7;--accent:#8e4035;--line:#dedbd4;--green:#35594b}
+.landing{max-width:1040px;padding-top:8vh}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,300px);align-items:center;gap:clamp(2rem,6vw,5rem);margin-bottom:3rem}
+.hero-copy{max-width:570px}
+.hero h1{font-size:clamp(3rem,7vw,5.25rem);line-height:1.02;letter-spacing:-.045em;margin:1.5rem 0 1rem;color:var(--ink)}
+.cover-art{display:block;width:min(100%,300px);height:auto;justify-self:center;box-shadow:0 14px 35px rgba(32,28,20,.16)}
 .eyebrow{color:var(--accent)}
-.landing h1{color:var(--ink)}
-.landing h1 em{display:inline-block;padding:0 .14em;background:var(--yellow);color:var(--ink);font-style:normal;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.subtitle{border-left:7px solid var(--accent);padding-left:18px;color:var(--ink)}
-.button{border-radius:2px;background:var(--ink)}
-.button.secondary{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
-.notice{border-left-color:var(--accent);background:#fff5cf;color:var(--ink)}
-.contents h2{border-left:8px solid var(--cyan);padding-left:14px}
-.contents li:nth-child(4n+1){border-left:5px solid var(--pink);padding-left:12px}
-.contents li:nth-child(4n+2){border-left:5px solid var(--cyan);padding-left:12px}
-.contents li:nth-child(4n+3){border-left:5px solid var(--green);padding-left:12px}
-.contents li:nth-child(4n){border-left:5px solid var(--yellow);padding-left:12px}
-.contents li a{padding:12px 8px}
-.reader-nav{border-top:3px solid var(--accent);border-bottom:1px solid var(--line);border-radius:0;background:#fffdf5}
-.reader-nav a{color:var(--accent)}
+.subtitle{font-size:1.15rem;max-width:550px;padding:0;border:0;color:var(--muted)}
+.byline{margin:1.5rem 0;color:var(--ink)}
+.button{border-radius:3px;background:#34332f}
+.button.secondary{background:transparent;border-color:#77736c;color:var(--ink)}
+.button:hover{filter:brightness(1.16)}
+.notice{border-left:3px solid var(--accent);background:#f0eee9;color:var(--ink)}
+.contents h2{padding:0;border:0;color:var(--ink)}
+.contents li:nth-child(n){padding:0;border:0;border-bottom:1px solid var(--line)}
+.contents li a{padding:11px 4px;color:var(--ink)}
+.contents li a:hover{color:var(--accent)}
+.reader-nav{border-block:1px solid var(--line);background:transparent}
+.reader-nav a,body:has(.reader-nav) a{color:var(--accent)}
 .reader-nav a:hover{color:var(--ink)}
 body:has(.reader-nav) .web-section-heading{text-align:right;margin:0 0 2.5rem;padding:1rem 0 1.5rem;border-bottom:1px solid var(--line)}
-body:has(.reader-nav) .web-section-heading h1{display:inline-block;margin:1rem 0 0;padding:.08em .25em;background:var(--yellow)}
+body:has(.reader-nav) .web-section-heading h1{display:inline-block;margin:1rem 0 0;padding:0;background:none;color:var(--ink)}
 body:has(.reader-nav) .web-section-heading p.p2{margin:.65em 0 0;text-align:right;font-style:italic}
 body:has(.reader-nav) .Quadro-de-texto-b-sico p.miolo-inicio1{margin-top:0}
-@media(max-width:600px){.landing{padding-top:8vh}.contents li:nth-child(n){border-left-width:4px}body:has(.reader-nav) .web-section-heading{margin-bottom:1.75rem}}
+@media(max-width:680px){.landing{padding-top:5vh}.hero{grid-template-columns:1fr;gap:1.5rem}.hero-copy{max-width:none}.cover-art{grid-row:1;width:min(55vw,230px);justify-self:start}.hero h1{font-size:clamp(2.8rem,12vw,4rem)}.reader-nav{font-size:.8rem;padding:10px 12px}.reader-nav .reader-home{display:none}body:has(.reader-nav) .Quadro-de-texto-b-sico{margin:2rem auto;padding:0 20px;font-size:18px}}
 """
 
 if __name__ == "__main__":
