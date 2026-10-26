@@ -2,7 +2,10 @@
 
 Traducción al español de trabajo de *Janonismo cultural: O uso das redes sociais e a batalha pela democracia no Brasil*, de André Janones (Civilização Brasileira, 2023).
 
-> **Privado y no autorizado para distribución.** La traducción, las imágenes y los elementos editoriales de esta edición se prepararon para revisión privada. No publicar el repositorio, la web ni los archivos descargables hasta obtener autorización escrita de los titulares de derechos.
+La traducción, las imágenes y los elementos editoriales de esta edición se prepararon para fines de divulgación sin ánimo de lucro. 
+
+La traducción se realizó principalmente con el modelo de IA generativa GPT-6.1-Sol y requiere una revisión profesional humana antes de considerarse definitiva. 
+
 
 ## Entregables
 
@@ -22,9 +25,3 @@ python3 build.py
 ```
 
 El proceso empaqueta los XHTML traducidos de `es/` como EPUB, genera el PDF con Calibre y actualiza el sitio estático y sus descargas en `docs/`.
-
-## Publicación (desactivada hasta contar con autorización)
-
-Hay un workflow manual en `.github/workflows/pages.yml`; no se ejecuta con cada `push`. Solo tras obtener permiso escrito, revisar la traducción y confirmar la visibilidad/ajustes de Pages, se debe cambiar el repositorio a la visibilidad deseada, habilitar GitHub Pages con **GitHub Actions** como fuente y ejecutar **Publish GitHub Pages** desde la pestaña Actions.
-
-La traducción requiere una revisión editorial humana antes de considerarse definitiva. El ISBN que figura en los créditos pertenece únicamente a la edición original en portugués; esta traducción no tiene ISBN propio.
