@@ -1,0 +1,439 @@
+@page {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+body {
+	margin-right: 6%;
+	margin-left: 6%;
+}
+
+p {
+	orphans: 2;
+	widows: 2;
+}
+
+a:link {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+p,h1 {
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	-epub-hyphens: auto;
+	hyphens: auto;
+}
+
+@font-face {
+	font-family: "Adobe Garamond Pro";
+	font-style: italic;
+	font-weight: normal;
+	src: url("../Fonts/AGaramondPro-Italic.otf"), url("../Fonts/AGaramondPro-Italic.woff");
+}
+
+@font-face {
+	font-family: "Adobe Garamond Pro";
+	font-style: oblique;
+	font-weight: normal;
+	src: url("../Fonts/AGaramondPro-Italic.otf"), url("../Fonts/AGaramondPro-Italic.woff");
+}
+
+@font-face {
+	font-family: "Adobe Garamond Pro";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../Fonts/AGaramondPro-Regular.otf"), url("../Fonts/AGaramondPro-Regular.woff");
+}
+
+@font-face {
+	font-family: "Adobe Garamond Pro";
+	font-style: normal;
+	font-weight: bold;
+	src: url("../Fonts/AGaramondPro-Bold.otf"), url("../Fonts/AGaramondPro-Bold.woff");
+}
+
+@font-face {
+	font-family: "Calvert MT Std";
+	font-style: normal;
+	font-weight: bold;
+	src: url("../Fonts/CalvertMTStd-Bold.otf"), url("../Fonts/CalvertMTStd-Bold.woff");
+}
+
+@font-face {
+	font-family: "Calvert MT Std";
+	font-style: italic;
+	font-weight: bold;
+	src: url("../Fonts/CalvertMTStd-Bold-Italic.otf"), url("../Fonts/CalvertMTStd-Bold-Italic.woff");
+}
+
+@font-face {
+	font-family: "Calvert MT Std";
+	font-style: oblique;
+	font-weight: bold;
+	src: url("../Fonts/CalvertMTStd-Bold-Italic.otf"), url("../Fonts/CalvertMTStd-Bold-Italic.woff");
+}
+
+a._idGenColorInherit {
+	color: inherit;
+}
+
+div.ficha {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: inherit;
+	border-right-color: inherit;
+	border-bottom-color: inherit;
+	border-left-color: inherit;
+	margin-bottom: 0.5em;
+	padding-top: 0.5em;
+	padding-right: 0.5em;
+	padding-bottom: 0.3em;
+	padding-left: 0.5em;
+	border-radius: 0.5em;
+	margin-top: 1em;
+}
+
+p {
+	font-family: "Adobe Garamond Pro", serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+	margin: 0em;
+	text-align: justify;
+	text-indent: 5%;
+}
+
+p.miolo-recuo1-esps {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-indent: 0em;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+p.asteriscos {
+	margin-top: 1.5em;
+	text-indent: 0em;
+	text-align: center;
+	letter-spacing: 0.5em;
+}
+
+p.rodape {
+	margin-top: 0.3em;
+	text-indent: 0em;
+	font-size: 0.85em;
+}
+
+p.rodape a {
+	word-break: break-all;
+}
+
+p.rodapet {
+	font-family: "Adobe Garamond Pro", serif;
+	font-style: normal;
+	font-weight: bold;
+	margin-bottom: 1em;
+	text-indent: 0em;
+	font-size: 0.9em;
+	text-align: left;
+}
+
+p.miolo-inicio1 {
+	margin-top: 5.5em;
+	text-indent: 0em;
+}
+
+p.miolo-inicio2 {
+	margin-top: 2.5em;
+	text-indent: 0em;
+}
+
+p.miolo-sem-espcm {
+	margin-top: 1.5em;
+	text-indent: 0em;
+}
+
+p.miolo-sem {
+	text-indent: 0em;
+}
+
+p.suma1 {
+	font-size: 1em;
+	text-align: left;
+	text-indent: -5%;
+	margin-left: 5%;
+}
+
+p.suma1-espc {
+	font-size: 1em;
+	text-align: left;
+	text-indent: -5%;
+	margin-left: 5%;
+	margin-top: 1em;
+}
+
+p.suma1i {
+	font-size: 1em;
+	text-align: left;
+	text-indent: -5%;
+	margin-left: 5%;
+	margin-top: 2.5em;
+}
+
+p.epi1i {
+	font-size: 1em;
+	text-indent: 0em;
+	text-align: right;
+	margin-left: 15%;
+	margin-top: 7em;
+}
+
+p.epi1-assinat {
+	font-size: 1em;
+	text-indent: 0em;
+	text-align: right;
+	margin-left: 15%;
+	margin-top: 1em;
+}
+
+figure.rosto {
+	text-align: center;
+	margin: 0em;
+	text-indent: 0em;
+}
+
+h1.p1 {
+	font-family: "Calvert MT Std", serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.4em;
+	margin: 0em;
+	text-align: right;
+	margin-top: 4em;
+	margin-bottom: 0em;
+	text-indent: 0em;
+}
+
+p.p2 {
+	font-size: 1em;
+	margin: 0em;
+	text-align: right;
+	margin-top: 2em;
+	margin-bottom: 0em;
+	text-indent: 0em;
+}
+
+h1.tit1 {
+	font-family: "Calvert MT Std", serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.4em;
+	margin: 0em;
+	text-align: left;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-indent: 0em;
+}
+
+p.colofao {
+	font-size: 0.8em;
+	text-align: center;
+	margin-top: 85%;
+	text-indent: 0em;
+	margin-left: 0em;
+}
+
+p.crede {
+	font-size: 0.75em;
+	text-indent: 5%;
+	text-align: left;
+	margin-left: 5%;
+}
+
+p.crede2 {
+	font-size: 0.75em;
+	text-indent: 5%;
+	text-align: left;
+	margin-top: 1em;
+}
+
+p.cred-4-esp-acima {
+	font-size: 0.8em;
+	margin-top: 0.7em;
+	text-align: left;
+	text-indent: 0em;
+	margin-left: 0em;
+}
+
+p.cred-4j-esp-acima {
+	font-size: 0.8em;
+	margin-top: 0.7em;
+	text-align: justify;
+	text-indent: 0em;
+	margin-left: 0em;
+}
+
+p.cred-4-inicio {
+	font-size: 0.65em;
+	margin-bottom: 0.5em;
+	margin-top: 0em;
+	padding-bottom: 0.5em;
+	text-align: center;
+	text-indent: 0em;
+	margin-left: 0em;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: inherit;
+	padding-top: 0.5em;
+}
+
+p.cred-5 {
+	font-size: 0.75em;
+	text-align: left;
+	float: left;
+	text-indent: 0em;
+	margin-left: 0em;
+}
+
+p.cred-6 {
+	font-size: 0.75em;
+	text-align: left;
+	margin-left: 40%;
+	text-indent: 0em;
+}
+
+p.cred-9 {
+	font-size: 0.75em;
+	text-align: left;
+	margin-left: 0em;
+	text-indent: 0em;
+	margin-top: 1em;
+}
+
+p.cred-left {
+	font-size: 0.75em;
+	text-align: left;
+	text-indent: 0em;
+	margin-left: 0em;
+}
+
+p.cred-recuo-3 {
+	font-size: 0.75em;
+	margin-left: 5%;
+	text-align: left;
+	text-indent: 5%;
+}
+
+p.cred-recuo-3-esp-acima {
+	font-size: 0.75em;
+	margin-left: 5%;
+	margin-top: 0.7em;
+	text-indent: 5%;
+	text-align: left;
+}
+
+p.cred-recuo-3-esps {
+	font-size: 0.75em;
+	margin-bottom: 0.7em;
+	margin-left: 5%;
+	margin-top: 0.7em;
+	text-align: left;
+	text-indent: 5%;
+}
+
+p.saiba-sub {
+	font-weight: bold;
+	margin-top: 1em;
+	text-align: left;
+	text-indent: 0em;
+	margin-left: 0em;
+}
+
+p.saiba-texto {
+	text-align: left;
+	text-indent: 0em;
+	font-size: 0.9em;
+	margin-left: 0em;
+	word-break: break-all;
+}
+
+p.saiba-titulo {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
+	margin-top: 1em;
+	text-align: center;
+	text-indent: 0em;
+	margin-left: 0em;
+}
+
+em.italico {
+	font-style: italic;
+}
+
+span.bold-italico {
+	font-style: italic;
+	font-weight: bold;
+}
+
+strong.bold-cal {
+	font-family: "Calvert MT Std", serif;
+	font-style: normal;
+	font-weight: bold;
+}
+
+span.versalete {
+	font-size: 1em;
+	font-variant: small-caps;
+}
+
+span.versalete2 {
+	font-size: 1.1em;
+	font-variant: small-caps;
+}
+
+.title-page {
+	min-height: 90vh;
+	padding: 1em 8%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-family: "Adobe Garamond Pro", serif;
+}
+
+.title-author, .edition, .place {
+	text-align: left;
+	text-indent: 0;
+}
+
+.title-author { font-style: italic; }
+.title-block { margin: auto 0; text-align: left; }
+.title-block h1 { font-size: 2em; margin: 0 0 0.4em; }
+.title-block p { font-family: "Calvert MT Std", serif; font-weight: bold; text-indent: 0; text-align: left; }
+.edition { margin: 3em 0; }
+.title-publisher { margin: 1em 0 0; }
+.title-publisher img { width: 28%; }
+.place { margin: 0; text-align: left; }

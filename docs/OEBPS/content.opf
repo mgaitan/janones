@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" version="3.0" unique-identifier="bookid" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/" xml:lang="es">
+  <metadata>
+    <dc:title>Janonismo cultural: El uso de las redes sociales y la batalla por la democracia en Brasil</dc:title>
+    <dc:creator>André Janones</dc:creator>
+    <dc:publisher>Civilização Brasileira</dc:publisher>
+    <dc:date>2023</dc:date>
+    <dc:language>es</dc:language>
+    <meta name="generator" content="Adobe InDesign 18.5" />
+    <dc:identifier id="bookid">urn:uuid:c3395be0-788d-516c-8397-c3a203380861</dc:identifier>
+    <meta name="cover" content="cover-es.svg" />
+    <meta content="unknown" name="schema:accessibilityHazard" />
+    <meta content="2.0.2" name="Sigil version" />
+    <meta property="dcterms:modified">2026-10-26T14:49:41Z</meta>
+  <dc:source>Janonismo cultural: O uso das redes sociais e a batalha pela democracia no Brasil (2023), ISBN 978-65-5802-113-1</dc:source><dc:description>Traducción de trabajo al español. Distribución sujeta a autorización de los titulares de derechos.</dc:description></metadata>
+  <manifest>
+    <item id="epigrafe.xhtml" href="Text/epigrafe.xhtml" media-type="application/xhtml+xml" />
+    <item id="sumario.xhtml" href="Text/sumario.xhtml" media-type="application/xhtml+xml" />
+    <item id="a1.xhtml" href="Text/a1.xhtml" media-type="application/xhtml+xml" />
+    <item id="a2.xhtml" href="Text/a2.xhtml" media-type="application/xhtml+xml" />
+    <item id="a3.xhtml" href="Text/a3.xhtml" media-type="application/xhtml+xml" />
+    <item id="a4.xhtml" href="Text/a4.xhtml" media-type="application/xhtml+xml" />
+    <item id="a5.xhtml" href="Text/a5.xhtml" media-type="application/xhtml+xml" />
+    <item id="a6.xhtml" href="Text/a6.xhtml" media-type="application/xhtml+xml" />
+    <item id="a7_notas.xhtml" href="Text/a7_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a8_notas.xhtml" href="Text/a8_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a9.xhtml" href="Text/a9.xhtml" media-type="application/xhtml+xml" />
+    <item id="a10_notas.xhtml" href="Text/a10_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a11_notas.xhtml" href="Text/a11_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a12_notas.xhtml" href="Text/a12_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a13_notas.xhtml" href="Text/a13_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a14_notas.xhtml" href="Text/a14_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a15_notas.xhtml" href="Text/a15_notas.xhtml" media-type="application/xhtml+xml" />
+    <item id="a16.xhtml" href="Text/a16.xhtml" media-type="application/xhtml+xml" />
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="toc" href="Text/toc.xhtml" media-type="application/xhtml+xml" properties="nav" />
+    <item id="civilizacao.css" href="Styles/civilizacao.css" media-type="text/css" />
+    <item id="colofao.xhtml" href="Text/colofao.xhtml" media-type="application/xhtml+xml" />
+    <item id="cover.xhtml" href="Text/cover.xhtml" media-type="application/xhtml+xml" />
+    <item id="creditos.xhtml" href="Text/creditos.xhtml" media-type="application/xhtml+xml" />
+    <item id="logo.jpg" href="Images/logo.jpg" media-type="image/jpeg" />
+    <item id="rosto.xhtml" href="Text/rosto.xhtml" media-type="application/xhtml+xml" />
+    <item id="saiba-mais.xhtml" href="Text/saiba-mais.xhtml" media-type="application/xhtml+xml" />
+    <item id="capa.jpg" href="Images/capa.jpg" media-type="image/jpeg" />
+    <item id="qr.jpg" href="Images/qr.jpg" media-type="image/jpeg" />
+    <item id="rosto.jpg" href="Images/rosto.jpg" media-type="image/jpeg" />
+    <item id="AGaramondPro-Bold.otf" href="Fonts/AGaramondPro-Bold.otf" media-type="application/vnd.ms-opentype" />
+    <item id="AGaramondPro-Bold.woff" href="Fonts/AGaramondPro-Bold.woff" media-type="font/woff" />
+    <item id="AGaramondPro-Italic.otf" href="Fonts/AGaramondPro-Italic.otf" media-type="application/vnd.ms-opentype" />
+    <item id="AGaramondPro-Italic.woff" href="Fonts/AGaramondPro-Italic.woff" media-type="font/woff" />
+    <item id="AGaramondPro-Regular.otf" href="Fonts/AGaramondPro-Regular.otf" media-type="application/vnd.ms-opentype" />
+    <item id="AGaramondPro-Regular.woff" href="Fonts/AGaramondPro-Regular.woff" media-type="font/woff" />
+    <item id="CalvertMTStd-Bold.otf" href="Fonts/CalvertMTStd-Bold.otf" media-type="application/vnd.ms-opentype" />
+    <item id="CalvertMTStd-Bold.woff" href="Fonts/CalvertMTStd-Bold.woff" media-type="font/woff" />
+    <item id="CalvertMTStd-Bold-Italic.otf" href="Fonts/CalvertMTStd-Bold-Italic.otf" media-type="application/vnd.ms-opentype" />
+    <item id="CalvertMTStd-Bold-Italic.woff" href="Fonts/CalvertMTStd-Bold-Italic.woff" media-type="font/woff" />
+    <item id="a7.xhtml" href="Text/a7.xhtml" media-type="application/xhtml+xml" />
+    <item id="a8.xhtml" href="Text/a8.xhtml" media-type="application/xhtml+xml" />
+    <item id="a10.xhtml" href="Text/a10.xhtml" media-type="application/xhtml+xml" />
+    <item id="a11.xhtml" href="Text/a11.xhtml" media-type="application/xhtml+xml" />
+    <item id="a12.xhtml" href="Text/a12.xhtml" media-type="application/xhtml+xml" />
+    <item id="a13.xhtml" href="Text/a13.xhtml" media-type="application/xhtml+xml" />
+    <item id="a14.xhtml" href="Text/a14.xhtml" media-type="application/xhtml+xml" />
+    <item id="a15.xhtml" href="Text/a15.xhtml" media-type="application/xhtml+xml" />
+  <item id="cover-es.svg" href="Images/capa-es.svg" media-type="image/svg+xml" properties="cover-image" /></manifest>
+  <spine toc="ncx">
+    <itemref idref="cover.xhtml" />
+    <itemref idref="rosto.xhtml" />
+    <itemref idref="epigrafe.xhtml" />
+    <itemref idref="sumario.xhtml" />
+    <itemref idref="a1.xhtml" />
+    <itemref idref="a2.xhtml" />
+    <itemref idref="a3.xhtml" />
+    <itemref idref="a4.xhtml" />
+    <itemref idref="a5.xhtml" />
+    <itemref idref="a6.xhtml" />
+    <itemref idref="a7.xhtml" />
+    <itemref idref="a7_notas.xhtml" />
+    <itemref idref="a8.xhtml" />
+    <itemref idref="a8_notas.xhtml" />
+    <itemref idref="a9.xhtml" />
+    <itemref idref="a10.xhtml" />
+    <itemref idref="a10_notas.xhtml" />
+    <itemref idref="a11.xhtml" />
+    <itemref idref="a11_notas.xhtml" />
+    <itemref idref="a12.xhtml" />
+    <itemref idref="a12_notas.xhtml" />
+    <itemref idref="a13.xhtml" />
+    <itemref idref="a13_notas.xhtml" />
+    <itemref idref="a14.xhtml" />
+    <itemref idref="a14_notas.xhtml" />
+    <itemref idref="a15.xhtml" />
+    <itemref idref="a15_notas.xhtml" />
+    <itemref idref="a16.xhtml" />
+    <itemref idref="creditos.xhtml" />
+    <itemref idref="colofao.xhtml" />
+    <itemref idref="saiba-mais.xhtml" />
+  </spine>
+  <guide>
+    <reference type="capa" title="Capa" href="Text/cover.xhtml" />
+    <reference type="toc" title="Sumário" href="Text/sumario.xhtml" />
+    <reference type="title-page" title="Página de Título" href="Text/rosto.xhtml" />
+    <reference type="copyright-page" title="Página de Direitos Autorais." href="Text/creditos.xhtml" />
+  </guide>
+</package>
